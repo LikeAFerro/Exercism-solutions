@@ -1,0 +1,9 @@
+# Ignore C build artifacts
+*.o
+*.out
+build/
+bin/
+*.exe
+
+# Optional: Ignore Exercism metadata if you don't want it
+.exercism/
