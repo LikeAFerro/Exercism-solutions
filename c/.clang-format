@@ -1,0 +1,4 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+BreakBeforeBraces: Attach  # Keeps braces on the same line
+SpaceAfterCStyleCast: true # Ensures (int) expression (with the space!)

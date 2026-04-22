@@ -1,8 +1,8 @@
 #ifndef GRAINS_H
 #define GRAINS_H
 
-#include <stdint.h>
 #include <math.h>
+#include <stdint.h>
 
 #define SQUARES 64
 
