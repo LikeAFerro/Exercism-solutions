@@ -1,4 +1,22 @@
+---
+# VS Code C Styling Configuration
 BasedOnStyle: LLVM
 IndentWidth: 4
-BreakBeforeBraces: Attach  # Keeps braces on the same line
-SpaceAfterCStyleCast: true # Ensures (int) expression (with the space!)
+ColumnLimit: 100
+
+# Braces: Same line (K&R / Attach style)
+BreakBeforeBraces: Attach
+
+# Spaces: Standard C conventions
+SpaceAfterCStyleCast: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+
+# Cleanup
+RemoveBracesLLVM: false
+---
