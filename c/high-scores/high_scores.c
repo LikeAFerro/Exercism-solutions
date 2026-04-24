@@ -26,6 +26,7 @@ size_t personal_top_three(const int32_t *scores, size_t scores_len, int32_t *out
             count++;
         for (size_t j = 0; j < count; j++) {
             if (scores[i] > output[j]) {
+                // shift the array
                 for (size_t k = count - 1; k > j; k--)
                     output[k] = output[k - 1];
                 output[j] = scores[i];
