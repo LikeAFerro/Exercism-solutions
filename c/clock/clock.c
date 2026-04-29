@@ -7,9 +7,7 @@ static void clock_parse(char *text, int *hour, int *minute) { sscanf(text, "%d:%
 clock_t clock_create(int hour, int minute) {
     clock_t clock;
 
-    int totmins = (hour * 60 + minute) % 1440;
-    if (totmins < 0)
-        totmins += 1440; // minutes in 24 hours
+    int totmins = ((hour * 60 + minute) % 1440 + 1440) % 1440; // minutes in 24 hours
     snprintf(clock.text, MAX_STR_LEN, "%02d:%02d", totmins / 60, totmins % 60);
 
     return clock;
