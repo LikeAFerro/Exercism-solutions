@@ -8,10 +8,7 @@ def round_scores(student_scores):
     :return: list - student scores *rounded* to nearest integer value.
     """
 
-    rounded_scores = []
-    for score in rounded_scores:
-        rounded_scores.append(round(score))
-    return rounded_scores
+    return [round(score) for score in student_scores]
 
 
 def count_failed_students(student_scores):
@@ -21,11 +18,12 @@ def count_failed_students(student_scores):
     :return: int - count of student scores at or below 40.
     """
 
-    return len([score for score in student_scores if score <= 40])
+    return sum(score <= 40 for score in student_scores)
 
 
 def above_threshold(student_scores, threshold):
-    """Determine how many of the provided student scores were 'the best' based on the provided threshold.
+    """Determine how many of the provided student scores were 'the best' 
+    based on the provided threshold.
 
     :param student_scores: list - of integer scores.
     :param threshold: int - threshold to cross to be the "best" score.
@@ -49,7 +47,8 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    pass
+    gap = (highest - 40) // 4
+    return list(range(41, highest, gap))
 
 
 def student_ranking(student_scores, student_names):
@@ -60,14 +59,15 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    pass
-
+    return [f"{rank}. {name}: {score}"
+            for rank, (score, name) in enumerate(zip(student_scores, student_names), 1)]
 
 def perfect_score(student_info):
-    """Create a list that contains the name and grade of the first student to make a perfect score on the exam.
+    """Create a list that contains the name and grade of the first student 
+    to make a perfect score on the exam.
 
     :param student_info: list - of [<student name>, <score>] lists.
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
 
-    pass
+    return next((student for student in student_info if student[1] == 100), [])
