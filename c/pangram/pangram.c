@@ -1,5 +1,6 @@
 #include "pangram.h"
 #include <ctype.h>
+#include <stddef.h>
 #include <stdint.h>
 
 bool is_pangram(const char *sentence) {
